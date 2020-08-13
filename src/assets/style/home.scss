@@ -1,0 +1,46 @@
+
+.put-middle{
+    h3{
+        color: #382c2c;
+    }
+
+    height: 100vh;
+    background-color: #f7e7bd;
+
+    .content-wrapper{
+        position: relative;
+        top: 20%;
+        margin-left: 5%;
+        margin-right: 5%;
+        // background-color: #141318;
+    }
+
+    .ant-btn{
+        border-radius: 5px;
+        border: none;
+        background-color: #d9c6a5;
+    }
+}
+
+.alfa{
+    // font-family: 'Alfa Slab One', cursive;
+    font-family: 'Special Elite', cursive;
+    color: #382c2c;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.synopsis{
+    font-size: 1rem;
+    word-wrap: break-word;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.socmed-icon-wrapper{
+    place-content: center;
+}
+.socmed-icon{
+    font-size: 2rem;
+    padding: .5rem;
+}
