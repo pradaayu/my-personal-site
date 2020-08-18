@@ -3,9 +3,9 @@
     height: 100vh;
     background-color: #c26565 ;
 
-    h2, h3, p{
-        color: #382c2c;
-    }
+    // h2, h3, p{
+    //     color: #382c2c;
+    // }
     .content-wrapper{
         position: relative;
         top: 5%;
@@ -14,7 +14,7 @@
     }
 
     .alfa{
-        font-family: 'Special Elite', cursive;
+        font-family: 'Signika', sans-serif;
         font-size: 3rem;
     }
 
@@ -25,7 +25,7 @@
     }
 
     .col-right{
-        border-right: 3px dashed #382c2c;
+        border-right: 3px dotted #382c2c;
         padding: 1.5rem;
     }
 }
