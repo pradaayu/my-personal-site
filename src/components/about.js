@@ -12,7 +12,11 @@ const About = () => {
                 <Col flex="30%" className="col-right">
                     <h3 className="subtitle">Education</h3>
                     <p>Glints Academy</p>
-                    <p>Chinese Language Center of National Chengchi University</p>
+                    <p>
+                        NON-DEGREE <br/>
+                        Chinese Language Center of National Chengchi University <br/>
+                        Intensive class on Mandarin.
+                    </p>
                     <p>Universitas Indonesia</p>
                     <h3 className="subtitle">Experience</h3>
                     <p>Management Trainee</p>
