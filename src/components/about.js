@@ -1,6 +1,6 @@
 import React from "react";
 import {Row, Col} from "antd"
-import "../assets/style/about.scss"
+
 
 const About = () => {
     return(

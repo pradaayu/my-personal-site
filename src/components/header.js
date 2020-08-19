@@ -1,41 +1,42 @@
 import React from "react"
-import {Breadcrumb, Row} from "antd"
-import {MenuOutlined} from "@ant-design/icons"
+import {Row,} from "antd"
+import {NavLink, HashRouter} from "react-router-dom"
+// import {MenuOutlined} from "@ant-design/icons"
+// import home from "./home"
+// import about from "./about"
+// import works from "./works"
 
 const Header = () => {
+
+    // const menu = (
+    // <Menu>
+    //     <Menu.Item key="0">
+    //         <a href="./home" >HOME</a>
+    //     </Menu.Item>
+    //     <Menu.Item key="1">
+    //         <a href="./about">ABOUT</a>
+    //     </Menu.Item>
+    //     <Menu.Item key="3">
+    //         <a href={works}>WORKS</a>
+    //     </Menu.Item>
+    //     <Menu.Item key="4">CONTACT</Menu.Item>
+    // </Menu>
+    // );
+
     return(
-        <div>
-            {/* <Breadcrumb>
-                <Breadcrumb.Item>
-                    <p>Home</p>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <p>About</p>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <p>Works</p>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <p>Resume</p>
-                </Breadcrumb.Item>
-            </Breadcrumb> */}
-            <Row style={{placeContent:"flex-end"}}>
-                {/* <Breadcrumb>
-                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>
-                        About
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>
-                        Works
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>Resume</Breadcrumb.Item>
-                </Breadcrumb> */}
-                {/* <p>Prada Ayu Nurani</p>
-                <p>|</p>
-                <p>I like design and coding</p> */}
-                <MenuOutlined style={{color:"#5e7361", fontSize:"2rem", padding:"1rem"}}/>
-            </Row>
-        </div>
+        <HashRouter>
+            <div>
+                <Row style={{placeContent:"flex-end"}}>
+                    {/* <Dropdown overlay={menu} trigger={['click']} onClick={e => e.preventDefault()}>
+                        <MenuOutlined style={{color:"#5e7361", fontSize:"2rem", padding:"1rem"}}/>
+                    </Dropdown> */}
+                    <p style={{padding:"1rem"}}><NavLink to="/">Home</NavLink></p>
+                    <p style={{padding:"1rem"}}><NavLink to="/about">About</NavLink></p>
+                    <p style={{padding:"1rem"}}><NavLink to="/works">Works</NavLink></p>
+                    <p style={{padding:"1rem"}}>Contact</p>
+                </Row>
+            </div>
+        </HashRouter>
     )
 }
 export default Header;

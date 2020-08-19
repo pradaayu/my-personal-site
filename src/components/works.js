@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/style/works.scss"
+// import "../assets/style/works.scss"
 import {Row, Col} from "antd"
 import LW from "../assets/images/LW.png"
 
