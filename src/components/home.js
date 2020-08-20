@@ -1,10 +1,14 @@
 import React, {Fragment, useState} from "react";
-import {Row, Col, Button, BackTop, Drawer, Modal} from "antd";
+import {Row, Col, Button, BackTop, Drawer, Modal, Carousel} from "antd";
 import {InstagramOutlined, LinkedinOutlined, GithubFilled, BehanceOutlined, ArrowUpOutlined, CopyrightCircleOutlined} from "@ant-design/icons"
-import foliage from "../assets/images/jungle foliage.png"
 import art from "../assets/images/art.svg"
 import webdev from "../assets/images/webdev.svg"
 import "../assets/style/home.scss"
+import winners from "../assets/images/winners.svg"
+import hiccup from "../assets/images/hiccup.png"
+import LW from "../assets/images/LW.png"
+import hwayugi from "../assets/images/hwayugi.png"
+import jasmine from "../assets/images/jasmine.png"
 
 const Home = () => {
     const style = {
@@ -18,7 +22,20 @@ const Home = () => {
         fontSize: 14,
     };
 
-    const [showModal, setShowModal] = useState(false)
+    const contentStyle = {
+        height: '70%',
+        width: '100%',
+        color: '#fff',
+        top: '0%',
+        placeContent: 'center',
+        lineHeight: '160px',
+        textAlign: 'center',
+        background: '#f7f2e6',
+    };
+
+
+    const [showModal1, setShowModal1] = useState(false)
+    const [showModal2, setShowModal2] = useState(false)
     const [visible, setVisible] = useState(false);
     const showDrawer = () => {
         setVisible(true);
@@ -31,9 +48,9 @@ const Home = () => {
         <Fragment>
             <div className="put-middle">
                 <Row className="navbar" style={{placeContent:"flex-end", textAlign:"right"}}>
-                    <Button type="primary" onClick={showDrawer}>
-                        Menu
-                    </Button>
+                    <h2 onClick={showDrawer} className="menu">
+                        MENU
+                    </h2>
                     <Drawer
                         placement="right"
                         closable={true}
@@ -43,7 +60,7 @@ const Home = () => {
                         <p style={{padding:"1rem"}}><a href="#home">Home</a></p>
                         <p style={{padding:"1rem"}}><a href="#about">About</a></p>
                         <p style={{padding:"1rem"}}><a href="#works">Works</a></p>
-                        <p style={{padding:"1rem"}}>Contact</p>
+                        <p style={{padding:"1rem"}}><a href="#contact">Contact</a></p>
                     </Drawer>
                 </Row>
                 <div id="home" className="home-wrapper">
@@ -59,18 +76,23 @@ const Home = () => {
                         <img style={{width:"40%"}} src={photo} alt="ani" />
                     </Col> */}
                     <Row className="socmed-icon-wrapper">
-                        <InstagramOutlined className="socmed-icon"/>
-                        <LinkedinOutlined className="socmed-icon"/>
-                        <GithubFilled className="socmed-icon"/>
-                        <BehanceOutlined className="socmed-icon"/>
+                        <a href="https://www.instagram.com/meowdynasty" rel="noopener noreferrer" target="_blank">
+                            <InstagramOutlined className="socmed-icon"/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/prada-ayu-nurani-ani-3a7830121/" rel="noopener noreferrer" target="_blank">
+                            <LinkedinOutlined className="socmed-icon"/>
+                        </a>
+                        <a href="https://www.github.com/pradaayu" rel="noopener noreferrer" target="_blank">
+                            <GithubFilled className="socmed-icon"/>
+                        </a>
+                        <a href="https://www.behance.net/pradaayu" rel="noopener noreferrer" target="_blank">
+                            <BehanceOutlined className="socmed-icon"/>
+                        </a>
                     </Row>
-                </div>
-                <div className="foliage-wrapper">
-                    <img className="foliage" src={foliage} alt=""/> 
                 </div>
                  <div id="about" className="about-wrapper">
                     <Row className="content-wrapper">
-                        <Col flex="50%" style={{paddingRight:"5rem"}}>
+                        <Col flex="50%" style={{paddingRight:"5%"}}>
                             <h2 className="title">PRADA AYU NURANI</h2>
                             <p>
                                 Hello, my name is Prada Ayu Nurani but you can call me Ani.
@@ -87,17 +109,26 @@ const Home = () => {
                             </p>
                             <h3 className="subtitle" style={{marginTop:"1rem"}}>Skills</h3>
                             <Row style={{placeContent:"center"}}>
-                                <p className="skill-item">Web Design</p> <p className="skill-item">HTML/CSS/JS</p> <p className="skill-item">ReactJS</p> <p className="skill-item">SASS</p> <p className="skill-item">Redux</p> 
+                                <p className="skill-item">Web Design</p> 
+                                <p className="skill-item">HTML/CSS/JS</p> 
+                                <p className="skill-item">ReactJS</p> 
+                                <p className="skill-item">SASS</p> 
+                                <p className="skill-item">Redux</p> 
                             </Row>
                             <Row style={{placeContent:"center"}}>
-                                <p className="skill-item">Git</p> <p className="skill-item">Adobe Photoshop</p> <p className="skill-item">Paint Tool SAI</p> <p className="skill-item">Hand sketching</p> <p className="skill-item">Watercolor</p> <p className="skill-item">Chinese Mandarin</p>
+                                <p className="skill-item">Git</p> 
+                                <p className="skill-item">Figma</p>
+                                <p className="skill-item">Adobe Photoshop</p> 
+                                <p className="skill-item">Paint Tool SAI</p> 
+                                <p className="skill-item">Hand sketching</p> 
+                                <p className="skill-item">Watercolor</p> 
                             </Row>
                             <h3 className="subtitle" style={{marginTop:"1rem"}}>Languages</h3>
                             <p>Bahasa Indonesia (native)</p>
                             <p>English (advanced)</p>
                             <p>Chinese Mandarin (intermediate)</p>
                         </Col>
-                        <Col flex="25%" className="col-left" style={{textAlign:"left"}}>
+                        <Col flex="25%" className="col-left">
                             <h3 className="subtitle">Education</h3>
                             
                             <div className="resume-item">
@@ -118,7 +149,7 @@ const Home = () => {
                                 <p>Universitas Indonesia</p>
                             </div>
                         </Col>
-                        <Col flex="25%" className="col-right" style={{textAlign:"left"}}>
+                        <Col flex="25%" className="col-right" >
                             <h3 className="subtitle">Experience</h3>
                             <div className="resume-item">
                                 <p className="year">July 2019 - November 2019</p>
@@ -134,30 +165,38 @@ const Home = () => {
                 </div>
                 <div id="works" className="works-wrapper">
                     <h2 className="title">MY WORKS</h2>
-                    <Row>
+                    <Row className="works-content-wrapper">
                         <Col flex="50%">
                             <h2>Web</h2>
                             <p>I design and code websites.</p>
                             <div className="illustration-img">
-                                <img src={webdev} style={{width:"100%", cursor:"pointer"}} alt="dev" onClick={() => setShowModal(true)}/>
+                                <img src={webdev} style={{width:"100%", cursor:"pointer"}} alt="dev" onClick={() => setShowModal1(true)}/>
                             </div>
                         </Col>
-                        <Col flex="50%">
+                        <Col flex="50%" className="illustration-wrapper">
                             <h2>Artworks</h2>
                             <p>Collection of artwork illustration.</p>
                             <div className="illustration-img">
-                                <img src={art} style={{width:"100%"}} alt="LW" />
+                                <img src={art} style={{width:"100%", cursor:"pointer"}} alt="LW" onClick={() => setShowModal2(true)} />
                             </div>
                         </Col>
                     </Row>
                 </div>
-                <div className="contact-wrapper">
+                <div id="contact" className="contact-wrapper">
                     <h2 className="title">FIND ME</h2>
-                    <Row style={{placeContent:"center"}}>
-                        <InstagramOutlined style={{fontSize:"5rem", padding:"2rem"}}/>
-                        <LinkedinOutlined style={{fontSize:"5rem", padding:"2rem"}}/>
-                        <GithubFilled style={{fontSize:"5rem", padding:"2rem"}}/>
-                        <BehanceOutlined style={{fontSize:"5rem", padding:"2rem"}}/>
+                    <Row className="contact-logo-wrapper">
+                        <a href="https://www.instagram.com/meowdynasty" rel="noopener noreferrer" target="_blank">
+                            <InstagramOutlined className="contact-logo"/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/prada-ayu-nurani-ani-3a7830121/" rel="noopener noreferrer" target="_blank">
+                            <LinkedinOutlined className="contact-logo"/>
+                        </a>
+                        <a href="https://www.github.com/pradaayu" rel="noopener noreferrer" target="_blank">
+                            <GithubFilled className="contact-logo"/>
+                        </a>
+                        <a href="https://www.behance.net/pradaayu" rel="noopener noreferrer" target="_blank">
+                            <BehanceOutlined className="contact-logo"/>
+                        </a>
                     </Row>
                     <Row style={{placeContent:"center", marginBottom:"0"}}>
                         <p><span><CopyrightCircleOutlined/></span> 2020 Prada Ayu Nurani</p>
@@ -168,14 +207,66 @@ const Home = () => {
                 </BackTop>
             </div>
             <Modal
-                visible={showModal}
-                onOk={() => setShowModal(false)}
-                onCancel={()=>setShowModal(false)}
+                className= "modal-web"
+                visible={showModal1}
+                onOk={() => setShowModal1(false)}
+                onCancel={()=>setShowModal1(false)}
                 footer={null}
+                width='100%'
             >
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <Carousel>
+                    <div>
+                        <div style={contentStyle}>
+                            <div style={{paddingLeft:"15%", paddingRight:"15%"}}>
+                                <img src={winners} alt="" style={{width:"100%"}} />
+                            </div>
+                            <a><Button>View Project</Button></a>
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>2</div>
+                    </div>
+                </Carousel>
+            </Modal>
+            <Modal
+                className= "modal-web"
+                visible={showModal2}
+                onOk={() => setShowModal2(false)}
+                onCancel={()=>setShowModal2(false)}
+                footer={null}
+                width='100%'
+            >
+                <Carousel>
+                    <div>
+                        <div style={contentStyle}>
+                            <div style={{paddingLeft:"15%", paddingRight:"15%", height:"90%"}}>
+                                <img src={hiccup} alt="" style={{width:"100%"}} />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>
+                           <div style={{paddingLeft:"15%", paddingRight:"15%", height:"90%"}}>
+                                <img src={LW} alt="" style={{width:"100%"}} />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>
+                           <div style={{paddingLeft:"15%", paddingRight:"15%", height:"95vh"}}>
+                                <img src={hwayugi} alt="" style={{width:"100%"}} />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>
+                           <div style={{paddingLeft:"15%", paddingRight:"15%"}}>
+                                <img src={jasmine} alt="" style={{width:"100%"}} />
+                            </div>
+                        </div>
+                    </div>
+                </Carousel>
+                <a><Button>More Artworks</Button></a>
             </Modal>
         </Fragment>
     )
