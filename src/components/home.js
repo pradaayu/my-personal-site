@@ -1,10 +1,12 @@
 import React, {Fragment, useState} from "react";
 import {Row, Col, Button, BackTop, Drawer, Modal, Carousel} from "antd";
+import {Link} from "react-router-dom"
 import {InstagramOutlined, LinkedinOutlined, GithubFilled, BehanceOutlined, ArrowUpOutlined, CopyrightCircleOutlined} from "@ant-design/icons"
 import art from "../assets/images/art.svg"
 import webdev from "../assets/images/webdev.svg"
 import "../assets/style/home.scss"
-import winners from "../assets/images/winners.svg"
+// import winners from "../assets/images/winners.svg"
+import symbr from "../assets/images/symbr.png"
 import hiccup from "../assets/images/hiccup.png"
 import LW from "../assets/images/LW.png"
 import hwayugi from "../assets/images/hwayugi.png"
@@ -20,17 +22,6 @@ const Home = () => {
         color: '#fff',
         textAlign: 'center',
         fontSize: 14,
-    };
-
-    const contentStyle = {
-        height: '70%',
-        width: '100%',
-        color: '#fff',
-        top: '0%',
-        placeContent: 'center',
-        lineHeight: '160px',
-        textAlign: 'center',
-        background: '#f7f2e6',
     };
 
 
@@ -216,15 +207,11 @@ const Home = () => {
             >
                 <Carousel>
                     <div>
-                        <div style={contentStyle}>
-                            <div style={{paddingLeft:"15%", paddingRight:"15%"}}>
-                                <img src={winners} alt="" style={{width:"100%"}} />
-                            </div>
-                            <a><Button>View Project</Button></a>
-                        </div>
+                        <img src={symbr} alt="" style={{width:"100%"}} />
+                        <Link to="/sayembara"><Button>View Project</Button></Link>
                     </div>
                     <div>
-                        <div style={contentStyle}>2</div>
+
                     </div>
                 </Carousel>
             </Modal>
@@ -236,34 +223,18 @@ const Home = () => {
                 footer={null}
                 width='100%'
             >
-                <Carousel>
-                    <div>
-                        <div style={contentStyle}>
-                            <div style={{paddingLeft:"15%", paddingRight:"15%", height:"90%"}}>
-                                <img src={hiccup} alt="" style={{width:"100%"}} />
-                            </div>
-                        </div>
+                <Carousel style={{height:"70%"}}>
+                    <div className="carousel-card-1">
+                        <img src={hiccup} alt="" style={{width:"100%"}} />
                     </div>
-                    <div>
-                        <div style={contentStyle}>
-                           <div style={{paddingLeft:"15%", paddingRight:"15%", height:"90%"}}>
-                                <img src={LW} alt="" style={{width:"100%"}} />
-                            </div>
-                        </div>
+                    <div className="carousel-card-2">
+                        <img src={LW} alt="" style={{width:"100%"}} />
                     </div>
-                    <div>
-                        <div style={contentStyle}>
-                           <div style={{paddingLeft:"15%", paddingRight:"15%", height:"95vh"}}>
-                                <img src={hwayugi} alt="" style={{width:"100%"}} />
-                            </div>
-                        </div>
+                    <div className="carousel-card-3">
+                        <img src={hwayugi} alt="" style={{width:"100%"}} />
                     </div>
-                    <div>
-                        <div style={contentStyle}>
-                           <div style={{paddingLeft:"15%", paddingRight:"15%"}}>
-                                <img src={jasmine} alt="" style={{width:"100%"}} />
-                            </div>
-                        </div>
+                    <div className="carousel-card-4">
+                        <img src={jasmine} alt="" style={{width:"100%"}} />
                     </div>
                 </Carousel>
                 <a><Button>More Artworks</Button></a>

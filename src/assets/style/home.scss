@@ -3,9 +3,7 @@
     place-content:flex-end;
     position: fixed;
     top: 0;
-    @media screen and (min-width: 1280px){
-        left: 90%;
-    }
+    left: 90%;
     background-color: transparent;
     padding: 1rem;
     z-index: 10;
@@ -19,6 +17,18 @@
         cursor: pointer;
         font-size: 1.5rem;
         transition: ease .5s;
+    }
+    @media screen and (max-width: 768px){
+        left: 80%;
+    }
+    @media screen and (max-width: 500px){
+        left: 75%;
+    }
+    @media screen and (max-width: 350px){
+        left: 80%;
+        .menu{
+            font-size: .8rem;
+        }
     }
 
 }
@@ -36,10 +46,13 @@
     a:visited {
         color: #f7f2e6;
     }
+    .anticon-close{
+        color: #f7f2e6;
+    }
 }
 .put-middle{
     // background-color: #f7e7bd;
-    background-color: #f7f2e6;
+    background-color: #f7e7bd;
     .ant-btn{
         border-radius: 5px;
         border: none;
@@ -100,14 +113,24 @@
             position: relative;
             z-index: 5;
         }
-        @media screen and (min-width: 350px){
+        @media screen and (max-width: 349px){
             background-size: 220%;
+            .greeting{
+                font-size: 6rem;
+                line-height: 8rem;
+            }
+            .synopsis{
+                font-size: .7rem;
+            }
+        }
+        @media screen and (min-width: 350px){
+            background-size: 210%;
             .greeting{
                 font-size: 8rem;
             }
         }
         @media screen and (min-width: 768px){
-            background-size: 160%;
+            background-size: 140%;
             .greeting{
                 font-size: 10rem;
             }
@@ -127,12 +150,13 @@
 
     .about-wrapper{
         height: 100vh;
-        // background-color: #5e7361;
-        background-color: #dde8d3; 
-        color: #5e7361;
+        background-color: #5e7361;
+        // background-color: #dde8d3; 
+        color: #f7f2e6;
 
         h2{
-            color: #5e7361;
+            // color: #5e7361;
+            color: #f7e7bd;
         }
 
         .content-wrapper{
@@ -151,7 +175,7 @@
                 margin-bottom: 0;
             }
             .year{
-                background-color: #5e7361;
+                background-color: #f7e7bd;
                 margin: .2rem;
                 padding-left: 5rem;
                 padding-right: 5rem;
@@ -159,7 +183,7 @@
                 padding: .2rem;
                 width: 70%;
                 text-align: center;
-                color: #f7f2e6;
+                color: #5e7361;
                 font-size: .8rem;
                 @media screen and (max-width: 1024px){
                     width: 100%;
@@ -176,8 +200,8 @@
         .skill-item{
             padding:.5rem; 
             margin:.2rem; 
-            background-color:#5e7361;
-            color: #f7f2e6;
+            background-color:#f7e7bd;
+            color: #5e7361;
             border-radius: 3px;
         }
 
@@ -185,13 +209,13 @@
             font-size: 1.5rem;
             font-family: 'Lato', sans-serif;
             font-weight: bold;
-            color: #5e7361;
+            color: #f7e7bd;
         }
 
         .col-left{
             text-align: left;
             height: 100%;
-            border-right: 3px dotted #382c2c;
+            border-right: 3px dotted #f7f2e6;
             padding: 5rem 1.5rem 1.5rem 1.5rem;
         }
 
@@ -224,7 +248,7 @@
 
     .works-wrapper{
         height: 100vh;
-        background-color: #f7f2e6;
+        background-color: #f7e7bd;
 
         h2{
             color: #5e7361;
@@ -258,9 +282,10 @@
         background-color: #5e7361;
         padding: 1rem;
         padding-bottom: .5rem;
+        color: #f7e7bd;
 
         h2{
-            color: #f7f2e6;
+            color: #f7e7bd;
         }
 
         .contact-logo-wrapper{
@@ -269,7 +294,7 @@
         .contact-logo{
             font-size:3rem;
             padding:2rem;
-            color: #f7f2e6;
+            color: #f7e7bd;
             :hover{
                 color:#382c2c;
                 font-size: 4rem;
@@ -283,26 +308,28 @@
 .ant-modal{
     padding: 1% 5%;
     top: 0;
-    border-radius: 3px;
     text-align: center;
     .ant-btn{
         background-color: #5e7361;
         border-radius: 3px;
         border: none;
-        color: #f7f2e6;
+        color: #f7e7bd;
     }
 }
 .modal-web{
     .ant-modal-body{
-        background-color: #f7f2e6;
-        height: 95vh;
+        background-color: #f7e7bd;
+        height: 100%;
+        border-radius: 10px;
     }
     .ant-modal-content{
-        background-color: #f7f2e6;
-        height: 95vh;
+        background-color: #f7e7bd;
+        height: 100%;
+        border-radius: 10px;
     }
     .ant-carousel{
-        height: 95vh;
+        height: 100%;
+        line-height: 0;
     }
     .tab-content{
         text-align: center;
@@ -315,4 +342,25 @@
         height: 5px;
         background-color: #9aa79a;
     }
+    @mixin carousel-card{
+        padding-left: 15%;
+        padding-right: 15%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .carousel-card-1, .carousel-card-2, .carousel-card-3, .carousel-card-4{
+        @include carousel-card
+    }
+    .carousel-card-1{
+        img{
+            padding-top: 10%;
+        }
+    }
+    .carousel-card-4{
+        img{
+            height: 70%;
+        }
+    }
+
 }
