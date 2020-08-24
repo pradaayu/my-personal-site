@@ -1,16 +1,15 @@
 import React, {Fragment, useState} from "react";
 import {Row, Col, Button, BackTop, Drawer, Modal, Carousel} from "antd";
 import {Link} from "react-router-dom"
+import { Link as Scrollink } from "react-scroll"
 import {InstagramOutlined, LinkedinOutlined, GithubFilled, BehanceOutlined, ArrowUpOutlined, CopyrightCircleOutlined} from "@ant-design/icons"
+import Fade from 'react-reveal/Fade';
+import Slider from "react-animated-slider";
+import "react-animated-slider/build/horizontal.css";
 import art from "../assets/images/art.svg"
 import webdev from "../assets/images/webdev.svg"
 import "../assets/style/home.scss"
 // import winners from "../assets/images/winners.svg"
-import symbr from "../assets/images/symbr.png"
-import hiccup from "../assets/images/hiccup.png"
-import LW from "../assets/images/LW.png"
-import hwayugi from "../assets/images/hwayugi.png"
-import jasmine from "../assets/images/jasmine.png"
 
 const Home = () => {
     const style = {
@@ -35,6 +34,38 @@ const Home = () => {
         setVisible(false);
     };
 
+    const slides = [
+        {
+        title: "Sayembara",
+        description: "Sayembara is a platform that brings together clients and graphic designers.",
+        image: require("../assets/images/symbr mockup.jpg"),
+        project: "/sayembara"
+        // link: "http://sayembara-ga6.herokuapp.com/",
+        // gitlab: "https://gitlab.com/glints-academy-6/team-e/front-end",
+        },
+        {
+        title: "Netflix Movie Review",
+        description:
+            "Explore and read movie reviews of your kind, provide outstanding ratings and leave great reviews on your favorite movies ",
+        image: require("../assets/images/netflix-mr-mockup.jpg"),
+        project: "/netflix-movie-review",
+        // link: "https://netflix-moviereview.netlify.app/",
+        // gitlab: "https://gitlab.com/ditcu-code/ga-movieapps",
+        }
+    ];
+
+    const slides2 = [
+        {
+            image: require("../assets/images/hiccup.png")
+        },
+        {
+            image: require("../assets/images/matilda.png")
+        },
+        {
+            image: require("../assets/images/hwayugi.png")
+        },
+    ]
+
     return (
         <Fragment>
             <div className="put-middle">
@@ -48,19 +79,21 @@ const Home = () => {
                         onClose={onClose}
                         visible={visible}
                     >
-                        <p style={{padding:"1rem"}}><a href="#home">Home</a></p>
-                        <p style={{padding:"1rem"}}><a href="#about">About</a></p>
-                        <p style={{padding:"1rem"}}><a href="#works">Works</a></p>
-                        <p style={{padding:"1rem"}}><a href="#contact">Contact</a></p>
+                        <p style={{padding:"1rem"}}><Scrollink activeClass="active" spy={true} smooth={true} offset={-0}duration={1500} to="home">Home</Scrollink></p>
+                        <p style={{padding:"1rem"}}><Scrollink activeClass="active" spy={true} smooth={true} offset={-0}duration={1500} to="about">About</Scrollink></p>
+                        <p style={{padding:"1rem"}}><Scrollink activeClass="active" spy={true} smooth={true} offset={-0}duration={1500} to="works">Works</Scrollink></p>
+                        <p style={{padding:"1rem"}}><Scrollink activeClass="active" spy={true} smooth={true} offset={-0}duration={1500} to="contact">Contact</Scrollink></p>
                     </Drawer>
                 </Row>
                 <div id="home" className="home-wrapper">
                      <Col flex="auto">   
                         {/* <h3 className="alfa">Hi,</h3> */}
-                        <h3 className="greeting">HELLO, I'M ANI.</h3>
-                        <p className="synopsis">I'm a junior front-end web developer with background in Chinese Studies. I love drawing, traveling, plants, and cats.</p>
+                        <Fade bottom>
+                            <h3 className="greeting">HELLO, I'M ANI.</h3>
+                            <p className="synopsis">I'm a junior front-end web developer with background in Chinese Studies. I love drawing, traveling, plants, and cats.</p>
                         
-                        <Button className="cv-btn"><a href="https://drive.google.com/file/d/13MkvuyWFpxxsW27SmLbvBUZeqRUGr1Xy/view?usp=sharing" rel="noopener noreferrer" target="_blank">Download CV</a></Button>
+                            <Button className="cv-btn"><a href="https://drive.google.com/file/d/13MkvuyWFpxxsW27SmLbvBUZeqRUGr1Xy/view?usp=sharing" rel="noopener noreferrer" target="_blank">Download CV</a></Button>
+                        </Fade>
                         
                     </Col>
                     {/* <Col flex="50%">
@@ -205,15 +238,22 @@ const Home = () => {
                 footer={null}
                 width='100%'
             >
-                <Carousel>
-                    <div>
-                        <img src={symbr} alt="" style={{width:"100%"}} />
-                        <Link to="/sayembara"><Button>View Project</Button></Link>
-                    </div>
-                    <div>
-
-                    </div>
-                </Carousel>
+                <Slider>
+                    {slides.map((slide, index) => <div key={index}>
+                        <Row className="title-wrapper" style={{placeContent:"center"}}>
+                            <h3 className="greeting">{slide.title}</h3>
+                        </Row>
+                        <img className="project-img" src={slide.image} alt="pic" style={{width:'100%'}}/>
+                        <div className="slide-desc-wrapper" style={{opacity: "1", transform: "translateY(0px)"}}>
+                            <div className="Intro__Container-dz0jgw-0 cHsHHK">
+                                <p className="Intro__IntroDescription-dz0jgw-2 ihmbTr">
+                                    {slide.description}
+                                </p>
+                            </div>
+                            <Link to={slide.project}><Button>View Project</Button></Link>
+                        </div>
+                    </div>)}
+                </Slider>
             </Modal>
             <Modal
                 className= "modal-web"
@@ -223,21 +263,14 @@ const Home = () => {
                 footer={null}
                 width='100%'
             >
-                <Carousel style={{height:"70%"}}>
-                    <div className="carousel-card-1">
-                        <img src={hiccup} alt="" style={{width:"100%"}} />
-                    </div>
-                    <div className="carousel-card-2">
-                        <img src={LW} alt="" style={{width:"100%"}} />
-                    </div>
-                    <div className="carousel-card-3">
-                        <img src={hwayugi} alt="" style={{width:"100%"}} />
-                    </div>
-                    <div className="carousel-card-4">
-                        <img src={jasmine} alt="" style={{width:"100%"}} />
-                    </div>
-                </Carousel>
-                <a><Button>More Artworks</Button></a>
+                <Slider>
+                    {slides2.map((slide, index) => <div key={index}>
+                       <img src={slide.image} alt="img" style={{width:"100%", objectFit:"cover"}} />
+                    </div>)}
+                </Slider>
+                <div className="slide-desc-wrapper">
+                    <Link to="/artworks"><Button>More Artworks</Button></Link>
+                </div>
             </Modal>
         </Fragment>
     )
