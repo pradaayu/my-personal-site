@@ -1,0 +1,125 @@
+.artwork-wrapper{
+    background-color:#f7e7bd;
+    .set-height-wrapper{
+        height: 100vh;
+        .down{
+            font-size: 3rem;
+            padding: 1%;
+            color: #5e7361;
+        }
+        @media screen and (max-width: 560px){
+            height: 100%;
+        }
+    }
+    .home-wrapper{
+        place-content:flex-end;
+        position: fixed;
+        top: 0;
+        left: 90%;
+        background-color: transparent;
+        padding: 1rem;
+        z-index: 10;
+        .home{
+            color: #5e7361;
+            font-weight: bold;
+            background-color: #f7e7bd;
+            border-radius: 5px;
+            padding: 0 10%;
+        }
+        .home:hover{
+            color: #565151;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: ease .5s;
+        }
+        @media screen and (max-width: 768px){
+            left: 80%;
+        }
+        @media screen and (max-width: 500px){
+            left: 75%;
+        }
+        @media screen and (max-width: 350px){
+            left: 80%;
+            .menu{
+                font-size: .8rem;
+            }
+        }
+    }
+    .artwork-intro-wrapper{
+        h1{
+            font-family: 'Signika', sans-serif;
+            font-size: 10rem;
+            text-transform: uppercase;
+            color: #5e7361;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 5%;
+        }
+        p{
+            font-size: 1rem;
+            font-weight: bold;
+            word-wrap: break-word;
+            padding-left: 25%;
+            padding-right: 25%;
+            position: relative;
+        }
+        @media screen and (max-width: 349px){
+            height: 100%;
+            h1{
+                font-size: 6rem;
+                line-height: 8rem;
+            }
+            .synopsis{
+                font-size: .7rem;
+            }
+        }
+        @media screen and (min-width: 350px){
+            h1{
+                font-size: 6.5rem;
+                line-height: 10rem;
+            }
+        }
+        @media screen and (min-width: 768px){
+            h1{
+                font-size: 10rem;
+                line-height: 12rem;
+            }
+        }
+        @media screen and (min-width: 1024px){
+            h1{
+                font-size: 12rem;
+                line-height: 14rem;
+            }
+        }
+
+    }
+    .wrap {
+        img{
+            filter: grayscale(100%);
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        img:hover{
+            filter: none;
+            transition: ease-in-out 1.5s;
+        }
+    }
+
+    .backhome-wrapper{
+        background-color: #5e7361;
+        p{
+            font-family: 'Signika', sans-serif;
+            text-transform: uppercase;
+            color: #f7e7bd;
+        }
+        p:hover{
+            color: #565151;
+            transition: ease-in-out 1s;
+        }
+    }
+}

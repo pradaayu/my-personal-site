@@ -1,0 +1,82 @@
+.webapp-wrapper{
+   
+    .webapp-head-wrapper{
+        background-color: #f7e7bd;
+        height: 100vh;
+        position: relative;
+        // background-image: url("../images/jungle\ foliage.png");
+        // background-position: center bottom;
+        // background-size: 100%;
+        // background-repeat: no-repeat;
+
+        .greeting{
+            // width: 100%;
+            font-family: 'Signika', sans-serif;
+            color: #5e7361;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0;
+            padding-top: 15%;
+            line-height: 12rem;
+        }
+        @media screen and (max-width: 349px){
+            background-size: 220%;
+            .greeting{
+                font-size: 6rem;
+                line-height: 8rem;
+            }
+        }
+        @media screen and (min-width: 350px){
+            background-size: 210%;
+            .greeting{
+                font-size: 8rem;
+            }
+        }
+        @media screen and (min-width: 768px){
+            background-size: 140%;
+            .greeting{
+                font-size: 10rem;
+            }
+        }
+        @media screen and (min-width: 1024px){
+            background-size:100%;
+        }
+    }
+
+    .webapp-desc{
+        place-content: flex-start;
+        text-align: left;
+        padding-left: 5%;
+        background-color: #f7e7bd;
+        .hHIFHN {
+            width: 100%;
+            display: grid;
+            grid-template-columns: var(--outer-col) repeat(var(--columns),minmax(0,1fr)) var( --outer-col );
+            margin: 0px;
+        }
+        .enQBMk {
+            padding-top: 60px;
+            opacity: 0;
+        }
+        .cHsHHK {
+            max-width: 380px;
+            grid-column: 2 / -2;
+        }
+        .jVDMgO {
+            font-family: Nimbus, sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 22px;
+            color: black;
+        }
+        .ihmbTr {
+            font-family: Nimbus, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: black;
+            margin-top: 8px;
+        }
+    }
+}
