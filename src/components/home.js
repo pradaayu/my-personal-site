@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from "react";
-import {Row, Col, Button, BackTop, Drawer, Modal, Carousel} from "antd";
+import {Row, Col, Button, BackTop, Drawer, Modal} from "antd";
 import {Link} from "react-router-dom"
 import { Link as Scrollink } from "react-scroll"
 import {InstagramOutlined, LinkedinOutlined, GithubFilled, BehanceOutlined, ArrowUpOutlined, CopyrightCircleOutlined} from "@ant-design/icons"
