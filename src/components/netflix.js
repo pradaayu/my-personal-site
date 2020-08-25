@@ -63,12 +63,12 @@ const MovieReview = () => {
                 </Col>
             </Row>
             <div style={{backgroundColor:"#5e7361"}}>
-                <Row style={{placeContent:"center"}}>
-                    <Col span={10} style={{marginTop:"6%"}}>
+                <Row  className="project-img-wrapper">
+                    <Col className="project-img project-img-top" span={10}>
                         <img src={require("../assets/images/movie-review.jpg")} alt="contests" style={{width:"100%"}}/>
                     </Col>
-                    <Col span={10} style={{marginLeft:"3%", marginTop:"3%"}}>
-                        <img src={require("../assets/images/netflix-movrev.jpg")} alt="full view" style={{width:"100%", marginBottom:"5%"}} />
+                    <Col className="project-img project-img-bottom" span={10} >
+                        <img className="img-top" src={require("../assets/images/netflix-movrev.jpg")} alt="full view" style={{width:"100%"}} />
                         <img src={require("../assets/images/movielist.jpg")} alt="submissions" style={{width:"100%"}} />
                     </Col>
                 </Row>
