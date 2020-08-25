@@ -67,20 +67,25 @@
             padding-right: 25%;
             position: relative;
         }
-        @media screen and (max-width: 349px){
+        @media screen and (max-width: 767px){
+            h1{
+                font-size: 8rem;
+                line-height: 10rem;
+            }
+            .synopsis{
+                font-size: 1rem;
+            }
+        }
+        @media screen and (max-width: 500px){
             height: 100%;
             h1{
-                font-size: 6rem;
-                line-height: 8rem;
+                font-size: 4.5rem;
+                line-height: 5rem;
+                padding-top: 25%;
             }
             .synopsis{
                 font-size: .7rem;
-            }
-        }
-        @media screen and (min-width: 350px){
-            h1{
-                font-size: 6.5rem;
-                line-height: 10rem;
+                margin-top: 5%;
             }
         }
         @media screen and (min-width: 768px){
@@ -114,6 +119,7 @@
         background-color: #5e7361;
         p{
             font-family: 'Signika', sans-serif;
+            font-size: 3rem;
             text-transform: uppercase;
             color: #f7e7bd;
         }

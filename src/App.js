@@ -10,12 +10,11 @@ import Artworks from "./components/artworks"
 function App() {
   return (
     <div className="App">
-      {/* <Routes/> */}
       <Switch>
-            <Route path="/" exact component={Home}/>
-            <Route path="/sayembara" exact component={Sayembara}/>
-            <Route path="/netflix-movie-review" exact component={MovieReview} />
-            <Route path="/artworks" exact component={Artworks} />
+          <Route path="/" exact component={Home}/>
+          <Route path="/sayembara" exact component={Sayembara}/>
+          <Route path="/netflix-movie-review" exact component={MovieReview} />
+          <Route path="/artworks" exact component={Artworks} />
       </Switch>
     </div>
   );

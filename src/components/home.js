@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from "react";
-import {Row, Col, Button, BackTop, Drawer, Modal, Carousel} from "antd";
+import {Row, Col, Button, BackTop, Drawer, Modal} from "antd";
 import {Link} from "react-router-dom"
 import { Link as Scrollink } from "react-scroll"
 import {InstagramOutlined, LinkedinOutlined, GithubFilled, BehanceOutlined, ArrowUpOutlined, CopyrightCircleOutlined} from "@ant-design/icons"
@@ -240,16 +240,8 @@ const Home = () => {
             >
                 <Slider>
                     {slides.map((slide, index) => <div key={index}>
-                        <Row className="title-wrapper" style={{placeContent:"center"}}>
-                            <h3 className="greeting">{slide.title}</h3>
-                        </Row>
                         <img className="project-img" src={slide.image} alt="pic" style={{width:'100%'}}/>
                         <div className="slide-desc-wrapper" style={{opacity: "1", transform: "translateY(0px)"}}>
-                            <div className="Intro__Container-dz0jgw-0 cHsHHK">
-                                <p className="Intro__IntroDescription-dz0jgw-2 ihmbTr">
-                                    {slide.description}
-                                </p>
-                            </div>
                             <Link to={slide.project}><Button>View Project</Button></Link>
                         </div>
                     </div>)}
@@ -268,7 +260,7 @@ const Home = () => {
                        <img src={slide.image} alt="img" style={{width:"100%", objectFit:"cover"}} />
                     </div>)}
                 </Slider>
-                <div className="slide-desc-wrapper">
+                <div className="slide-desc-wrapper slide-desc-button">
                     <Link to="/artworks"><Button>More Artworks</Button></Link>
                 </div>
             </Modal>

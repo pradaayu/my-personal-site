@@ -14,6 +14,7 @@
         background-color: #f7e7bd;
         border-radius: 5px;
         padding: 0 10%;
+        width: 5rem;
     }
     .menu:hover{
         color: #565151;
@@ -310,6 +311,14 @@
                 font-size: 4rem;
                 transition: ease .5s;
             }
+            @media screen and (max-width: "500px"){
+                font-size: 2.5rem;
+                padding: 0 1rem;
+                margin-bottom: 2rem;
+                :hover{
+                    font-size: 3rem;
+                }
+            }
         }
     }
 
@@ -331,49 +340,35 @@
         background-color: #f7e7bd;
         height: 100vh;
         border-radius: 10px;
+        @media screen and (max-width:500px) {
+            height: 60vh;
+        }
     }
     .ant-modal-content{
         background-color: #f7e7bd;
         height: 100vh;
         border-radius: 10px;
-    }
-    .ant-carousel{
-        height: 100%;
-        line-height: 0;
-    }
-    .tab-content{
-        text-align: center;
-    }
-    .ant-carousel .slick-dots li.slick-active button {
-        background-color: #5e7361;
-        height: 5px;
-    }
-    .ant-carousel .slick-dots li button {
-        height: 5px;
-        background-color: #9aa79a;
-    }
-    @mixin carousel-card{
-        padding-left: 15%;
-        padding-right: 15%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
-    .carousel-card-1, .carousel-card-2, .carousel-card-3, .carousel-card-4{
-        @include carousel-card
-    }
-    .carousel-card-1{
-        img{
-            padding-top: 10%;
-        }
-    }
-    .carousel-card-4{
-        img{
-            height: 70%;
+        @media screen and (max-width:500px) {
+            height: 55vh;
         }
     }
     .slider{
         height: 100%;
+        @media screen and (max-width: 500px){
+            height: 55vh;
+        }
+        .project-img{
+            filter: grayscale(.7);
+        }
+        .project-img:hover{
+            filter: none;
+            transition: ease-in-out 1s;
+        }
+        h3{
+            color: #5e7361;
+            position: relative;
+            top: 15%;
+        }
     }
     .title-wrapper{
         place-content: center;
@@ -381,6 +376,25 @@
         z-index: 90;
         top: 5%;
         height: 0;
+    }
+    @media screen and (max-width: 700px){
+        top: 20%;
+        .slider{
+            height: 60vh;
+        }
+        .ant-modal-body{
+            height: 65vh;
+        }
+        .ant-modal-content{
+            height: 65vh;
+        }
+    }
+    @media screen and (max-width: 1023px){
+        .slide-desc-button{
+            position: relative;
+            z-index: 90;
+            top: -10%;
+        }
     }
     @media screen and (min-width: 1024px){
         .slide-desc-wrapper{
