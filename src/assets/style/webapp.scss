@@ -12,7 +12,7 @@
             place-content:flex-end;
             position: fixed;
             top: 0;
-            left: 90%;
+            left: 80%;
             background-color: transparent;
             padding: 1rem;
             z-index: 10;
@@ -22,6 +22,7 @@
                 background-color: #f7e7bd;
                 border-radius: 5px;
                 padding: 0 10%;
+                width: 5rem;
             }
             .home:hover{
                 color: #565151;
@@ -80,6 +81,12 @@
             .greeting{
                 font-size: 6.5rem;
             }
+            .home-wrapper{
+                left: 80%;
+                .home{
+                    font-size: .8rem;
+                }
+            }
             .project-link{
                 p{
                     padding: 0 .5rem;
@@ -95,6 +102,9 @@
             }
             .home-wrapper{
                 left: 80%;
+                .home{
+                    font-size: 1rem;
+                }
             }
         }
         @media screen and (min-width: 1280px){
@@ -166,6 +176,38 @@
         //     width: 560px;
         //     height: 310px;
         // }
+    }
+
+    .project-img-wrapper{
+        place-content: center;
+        .project-img-top{
+            margin-top:"6%"
+        }
+        .project-img-bottom{
+            margin-left: 3%; 
+            margin-top: 3%;
+        }
+        .img-top{
+            margin-bottom: 5%;
+        }
+        @media screen and (max-width: 800px){
+            .ant-col-10{
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+            .img-top{
+                margin-bottom: 3%;
+            }
+            .project-img-bottom{
+                margin: 0;
+            }
+            .project-img-top{
+                margin: 3% 0;
+            }
+            .project-img{
+                padding: 0 3%;
+            }
+        }
     }
 
     .backhome-wrapper{

@@ -1,13 +1,23 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom"
 import { Link as Scrollink } from "react-scroll"
-import {Row, Col, Modal} from "antd"
-import {ArrowDownOutlined, ArrowRightOutlined} from "@ant-design/icons"
+import {Row, Col, Modal, BackTop} from "antd"
+import {ArrowDownOutlined, ArrowRightOutlined, ArrowUpOutlined} from "@ant-design/icons"
 import Slide from 'react-reveal/Slide';
 import "../assets/style/webapp.scss"
 
 const Sayembara = () => {
     const [visible, setVisible] = useState(false)
+    const style = {
+        height: 40,
+        width: 40,
+        lineHeight: '40px',
+        borderRadius: 4,
+        backgroundColor: '#5e7361',
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 14,
+    };
     return(
         <div className="webapp-wrapper" >
             <div className="webapp-head-wrapper">
@@ -54,12 +64,12 @@ const Sayembara = () => {
                 </Col>
             </Row>
             <div style={{backgroundColor:"#5e7361"}}>
-                <Row style={{placeContent:"center"}}>
-                    <Col span={10} style={{marginTop:"6%"}}>
+                <Row className="project-img-wrapper">
+                    <Col className="project-img project-img-top" span={10}>
                         <img src={require("../assets/images/sayembara-LP.jpg")} alt="full view" style={{width:"100%"}} />
                     </Col>
-                    <Col span={10} style={{marginLeft:"3%", marginTop:"3%"}}>
-                        <img src={require("../assets/images/symbr-contest.jpg")} alt="contests" style={{width:"100%", marginBottom:"5%"}}/>
+                    <Col className="project-img project-img-bottom" span={10} >
+                        <img className="img-top" src={require("../assets/images/symbr-contest.jpg")} alt="contests" style={{width:"100%"}}/>
                         <img src={require("../assets/images/symbr-submission.jpg")} alt="submissions" style={{width:"100%"}} />
                     </Col>
                 </Row>
@@ -69,6 +79,9 @@ const Sayembara = () => {
                     <p style={{fontSize:"3rem"}}>Back to home <span><ArrowRightOutlined/></span></p>
                 </Link>
             </Row>
+            <BackTop>
+                <div style={style}><ArrowUpOutlined/></div>
+            </BackTop>
             <Modal
                 className= "modal-web"
                 visible={visible}
