@@ -9,7 +9,7 @@ const Artworks = () => {
     return(
         <div className="artwork-wrapper">
             <div className="set-height-wrapper">
-                <Row className="home-wrapper" style={{placeContent:"flex-end"}}>
+                <Row className="home-wrapper">
                     <Link to="/"><h2 className="home">HOME</h2></Link>
                 </Row>
                 <div className="artwork-intro-wrapper">
@@ -52,7 +52,7 @@ const Artworks = () => {
             </Row>
             <Row className="backhome-wrapper">
                 <Link to="/">
-                    <p style={{fontSize:"3rem"}}>Back to home <span><ArrowRightOutlined/></span></p>
+                    <p>Back to home <span><ArrowRightOutlined/></span></p>
                 </Link>
             </Row>
         </div>
