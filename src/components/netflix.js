@@ -1,88 +1,76 @@
-import React from "react"
-import {Link} from "react-router-dom"
-import { Link as Scrollink } from "react-scroll"
-import {Row, Col} from "antd"
-import Slide from 'react-reveal/Slide'
-import {BackTop} from "antd"
-import {ArrowDownOutlined, ArrowUpOutlined, ArrowRightOutlined} from "@ant-design/icons"
-import "../assets/style/webapp.scss"
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowDownIcon, ArrowUpIcon, ArrowRightIcon } from "@heroicons/react/24/solid"; // Heroicons
+import "../assets/style/webapp.scss";
 
 const MovieReview = () => {
-    const style = {
-        height: 40,
-        width: 40,
-        lineHeight: '40px',
-        borderRadius: 4,
-        backgroundColor: '#5e7361',
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 14,
-    };
-    return(
-        <div className="webapp-wrapper">
-            <div className="webapp-head-wrapper">
-                <Row className="home-wrapper">
-                    <Link to="/"><h2 className="home">HOME</h2></Link>
-                </Row>       
-                <Row style={{placeContent:"center"}}>
-                    <Slide right>
-                        <h3 className="greeting">MOVIE REVIEW</h3>
-                        <Row className="project-link">
-                            <a href="https://netflix-moviereview.netlify.app/" target="_blank" rel="noopener noreferrer"><p>Live Website</p></a>
-                            <p>|</p>
-                            <a href="https://gitlab.com/ditcu-code/ga-movieapps" target="_blank" rel="noopener noreferrer"><p>Repo</p></a>
-                        </Row>
-                    </Slide>
-                </Row>
-                <Scrollink activeClass="active" spy={true} smooth={true} offset={-0}duration={1500} to="movie-review-desc">
-                    <ArrowDownOutlined style={{fontSize:"6rem", color:"#5e7361", marginTop:"10%"}}/>
-                </Scrollink>
-                <Row className="next-project" style={{placeContent:"flex-start"}}>
-                    <Col>
-                        <Link to="/sayembara">
-                            <p style={{marginRight:".5rem"}}> {'< '} </p>
-                        </Link>
-                    </Col>
-                    <Col>
-                       <Link to="/sayembara"><p>Sayembara </p></Link> 
-                    </Col>
-                </Row>
+    return (
+        <div className="flex flex-col items-center text-center">
+            {/* Header */}
+            <div className="w-full py-6">
+                <Link to="/" className="text-2xl font-bold hover:underline">HOME</Link>
             </div>
-            <Row id="movie-review-desc" className="webapp-desc">
-                <Col className="enQBMk hHIFHN" style={{opacity: "1", transform: "translateY(0px)"}}>
-                    <Slide left>
-                        <div className="Intro__Container-dz0jgw-0 cHsHHK">
-                            <h1 className="Intro__IntroTitle-dz0jgw-1 jVDMgO">Netflix Movie Review</h1>
-                            <p className="Intro__IntroDescription-dz0jgw-2 ihmbTr">
-                                Netflix movie review was made during the time I first learn using ReactJS.
-                    This webapp is a movie database intended for user to see each movie's trailer and synopsis
-                    as well as leave review as a member. It is fully integrated with API.
-                            </p>
-                        </div>
-                    </Slide>
-                </Col>
-            </Row>
-            <div style={{backgroundColor:"#5e7361"}}>
-                <Row  className="project-img-wrapper">
-                    <Col className="project-img project-img-top" span={10}>
-                        <img src={require("../assets/images/movie-review.jpg")} alt="contests" style={{width:"100%"}}/>
-                    </Col>
-                    <Col className="project-img project-img-bottom" span={10} >
-                        <img className="img-top" src={require("../assets/images/netflix-movrev.jpg")} alt="full view" style={{width:"100%"}} />
-                        <img src={require("../assets/images/movielist.jpg")} alt="submissions" style={{width:"100%"}} />
-                    </Col>
-                </Row>
+
+            {/* Title & Links */}
+            <div className="max-w-3xl mx-auto">
+                <h3 className="text-3xl font-bold">MOVIE REVIEW</h3>
+                <div className="flex justify-center items-center gap-4 mt-2 text-lg font-medium">
+                    <a href="https://netflix-moviereview.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        Live Website
+                    </a>
+                    <span>|</span>
+                    <a href="https://gitlab.com/ditcu-code/ga-movieapps" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        Repo
+                    </a>
+                </div>
             </div>
-            <Row className="backhome-wrapper">
-                <Link to="/">
-                    <p style={{fontSize:"3rem"}}>Back to home <span><ArrowRightOutlined/></span></p>
+
+            {/* Scroll Down Arrow */}
+            <a href="#movie-review-desc" className="mt-10 cursor-pointer animate-bounce text-green-700">
+                <ArrowDownIcon className="w-16 h-16" />
+            </a>
+
+            {/* Navigation to Previous Project */}
+            <div className="w-full flex items-center justify-start mt-6 px-6">
+                <Link to="/sayembara" className="flex items-center text-lg font-semibold hover:underline">
+                    <span className="mr-2">&lt;</span> Sayembara
                 </Link>
-            </Row>
-            <BackTop>
-                <div style={style}><ArrowUpOutlined/></div>
-            </BackTop>
+            </div>
+
+            {/* Movie Review Description */}
+            <div id="movie-review-desc" className="max-w-3xl mx-auto mt-12 text-left">
+                <h1 className="text-4xl font-bold">Netflix Movie Review</h1>
+                <p className="mt-4 text-lg leading-relaxed">
+                    Netflix movie review was made during the time I first learned ReactJS. 
+                    This web app is a movie database intended for users to see each movie's trailer and synopsis, 
+                    as well as leave reviews as members. It is fully integrated with an API.
+                </p>
+            </div>
+
+            {/* Image Gallery */}
+            <div className="w-full bg-green-700 mt-12 py-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
+                    <img src={require("../assets/images/movie-review.jpg")} alt="contests" className="w-full rounded-lg shadow-lg" />
+                    <div className="flex flex-col gap-4">
+                        <img src={require("../assets/images/netflix-movrev.jpg")} alt="full view" className="w-full rounded-lg shadow-lg" />
+                        <img src={require("../assets/images/movielist.jpg")} alt="submissions" className="w-full rounded-lg shadow-lg" />
+                    </div>
+                </div>
+            </div>
+
+            {/* Back to Home */}
+            <div className="w-full flex justify-center mt-12">
+                <Link to="/" className="flex items-center text-2xl font-semibold hover:underline">
+                    Back to home <ArrowRightIcon className="ml-2 w-6 h-6" />
+                </Link>
+            </div>
+
+            {/* Back to Top Button */}
+            <a href="#" className="fixed bottom-6 right-6 p-3 bg-green-700 text-white rounded-full shadow-lg cursor-pointer hover:bg-green-800">
+                <ArrowUpIcon className="w-6 h-6" />
+            </a>
         </div>
-    )
-}
+    );
+};
 
 export default MovieReview;

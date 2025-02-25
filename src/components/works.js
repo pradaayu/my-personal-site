@@ -1,25 +1,27 @@
 import React from "react";
-// import "../assets/style/works.scss"
-import {Row, Col} from "antd"
-import LW from "../assets/images/LW.png"
+import LW from "../assets/images/LW.png";
 
 const Works = () => {
-    return(
-        <div className="works-wrapper">
-            <h1 className="alfa">My Works</h1>
-            <Row>
-                <Col flex="50%">
-                    <h2>Code</h2>
-                </Col>
-                <Col flex="50%">
-                    <h2>Illustration</h2>
-                    <div className="illustration-img">
-                        <img src={LW} style={{width:"100%"}} alt="LW" />
+    return (
+        <div className="works-wrapper text-center">
+            <h1 className="alfa text-4xl font-bold mb-6">My Works</h1>
+
+            <div className="flex flex-col md:flex-row justify-center gap-10">
+                {/* Code Section */}
+                <div className="w-full md:w-1/2">
+                    <h2 className="text-2xl font-semibold">Code</h2>
+                </div>
+
+                {/* Illustration Section */}
+                <div className="w-full md:w-1/2">
+                    <h2 className="text-2xl font-semibold">Illustration</h2>
+                    <div className="illustration-img mt-4">
+                        <img src={LW} className="w-full rounded-lg shadow-lg" alt="LW" />
                     </div>
-                    {/*pake modal isinya traditional illustration & digital illustration*/}
-                </Col>
-            </Row>
+                </div>
+            </div>
         </div>
-    )
-}
+    );
+};
+
 export default Works;
